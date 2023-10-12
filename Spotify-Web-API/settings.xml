@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" xsi:type="con:RestService" id="3ba0df4f-9a09-40c8-ba31-d6763e49a31f" name="Spotify Web API" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" definitionUrl="https://api.swaggerhub.com/apis/KJsOrganization/spotify-web_api/2023.3.22">
-  <con:description id="4308ec1d-0c5e-4b1b-a34a-1999bb9422a3">You can use Spotify's Web API to discover music and podcasts, manage your Spotify library, control audio playback, and much more. In order to make successful Web API requests your app will need a valid Oauth 2.0 access token. 
+  <con:description id="f4e38e0e-46a7-4a08-a7fc-5b371530878e">You can use Spotify's Web API to discover music and podcasts, manage your Spotify library, control audio playback, and much more. In order to make successful Web API requests your app will need a valid Oauth 2.0 access token. 
 
 The base URI for all Web API requests is `https://api.spotify.com/v1`.
 
