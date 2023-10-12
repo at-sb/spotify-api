@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="6e9e2ed8-7687-4d4a-b21f-07af9f375df9" name="Spotify Web API Test">
+  <con:settings id="e98f33cc-2640-47db-b37a-b974c79a1fa4">
+    <con:setting id="8af77f82-7a4b-46e8-b153-eebc1acac8bdfileName">Spotify-Web-API-Test</con:setting>
+    <con:setting id="7b2c727a-7abc-4382-992d-3e9ac8ff6c25fileName">Spotify-Web-API-Test</con:setting>
+    <con:setting id="6e9e2ed8-7687-4d4a-b21f-07af9f375df9fileName">Spotify-Web-API-Test</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="6faab8de-327e-404a-ad6a-92c2673cba40">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="d7b5f83c-9bb2-4dbe-b0f3-66f69604eefd">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testSuite>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/audio-analysis/{id}" path="/audio-analysis/{id}" id="81c6a1af-969f-4cf9-94de-50faec5cb6ba">
+  <con:settings id="2715139e-ed67-4c2a-a411-a74d0e796001">
+    <con:setting id="81c6a1af-969f-4cf9-94de-50faec5cb6bafileName">%2Faudio-analysis%2F%7Bid%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="get-audio-analysis" id="4859a73a-5630-49be-8bb9-b8d2a9ffa0b5" method="GET">
+    <con:description>Get a low-level audio analysis for a track in the Spotify catalog. The audio analysis describes the track’s structure and musical content, including rhythm, pitch, and timbre.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>id</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success!</con:description>
+      <con:sampleContent>{
+  "meta" : {
+    "analyzer_version" : "4.0.0",
+    "platform" : "Linux",
+    "detailed_status" : "OK",
+    "status_code" : 0,
+    "timestamp" : 1495193577,
+    "analysis_time" : 6.93906,
+    "input_process" : "libvorbisfile L+R 44100->22050"
+  },
+  "track" : {
+    "num_samples" : 4585515,
+    "duration" : 207.95985,
+    "sample_md5" : "string",
+    "offset_seconds" : 0,
+    "window_seconds" : 0,
+    "analysis_sample_rate" : 22050,
+    "analysis_channels" : 1,
+    "end_of_fade_in" : 0,
+    "start_of_fade_out" : 201.13705,
+    "loudness" : -5.883,
+    "tempo" : 118.211,
+    "tempo_confidence" : 0.73,
+    "time_signature" : 4,
+    "time_signature_confidence" : 0.994,
+    "key" : 9,
+    "key_confidence" : 0.408,
+    "mode" : 0,
+    "mode_confidence" : 0.485,
+    "codestring" : "string",
+    "code_version" : 3.15,
+    "echoprintstring" : "string",
+    "echoprint_version" : 4.15,
+    "synchstring" : "string",
+    "synch_version" : 1,
+    "rhythmstring" : "string",
+    "rhythm_version" : 1
+  },
+  "bars" : [ {
+    "start" : 0.49567,
+    "duration" : 2.18749,
+    "confidence" : 0.925
+  } ],
+  "beats" : [ {
+    "start" : 0.49567,
+    "duration" : 2.18749,
+    "confidence" : 0.925
+  } ],
+  "sections" : [ {
+    "start" : 0,
+    "duration" : 6.97092,
+    "confidence" : 1,
+    "loudness" : -14.938,
+    "tempo" : 113.178,
+    "tempo_confidence" : 0.647,
+    "key" : 9,
+    "key_confidence" : 0.297,
+    "mode" : 1.5,
+    "mode_confidence" : 0.471,
+    "time_signature" : 4,
+    "time_signature_confidence" : 1
+  } ],
+  "segments" : [ {
+    "start" : 0.70154,
+    "duration" : 0.19891,
+    "confidence" : 0.435,
+    "loudness_start" : -23.053,
+    "loudness_max" : -14.25,
+    "loudness_max_time" : 0.07305,
+    "loudness_end" : 0,
+    "pitches" : [ 0.212, 0.141, 0.294 ],
+    "timbre" : [ 42.115, 64.373, -0.233 ]
+  } ],
+  "tatums" : [ {
+    "start" : 0.49567,
+    "duration" : 2.18749,
+    "confidence" : 0.925
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>429</con:status>
+      <con:params/>
+      <con:description>The app has exceeded its rate limits.</con:description>
+      <con:sampleContent>{
+  "error" : {
+    "status" : 0,
+    "message" : "string"
+  }
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="99f3bf38-92fd-49e1-9743-bdc63a2512a9" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.spotify.com/v1</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://api.spotify.com/v1/audio-analysis/</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="id" value="263aNAQCeFSWipk896byo6"/>
+      </con:parameters>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="ea640a70-5ea0-4ec3-b35b-41848a931972" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test Case 1" searchProperties="true" timeout="0">
+  <con:settings id="43a26aeb-aaf0-4b45-b195-6214090fc8d7">
+    <con:setting id="a1833076-62e4-422f-af9d-9f3ec88fe24bfileName">Test-Case-1</con:setting>
+    <con:setting id="5ad74f96-25f6-4ca7-b841-261c83f174f5fileName">Test-Case-1</con:setting>
+    <con:setting id="ea640a70-5ea0-4ec3-b35b-41848a931972fileName">Test-Case-1</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source" id="deea17e6-d659-401d-8ac5-74edcd81d8c1">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataSourceStep">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>1</generatorsTotalNumber>
+          <lastSelectedProperty>0</lastSelectedProperty>
+          <GeneratorType0>NAME</GeneratorType0>
+          <PropertyName0>q</PropertyName0>
+          <repetitionCountq>0</repetitionCountq>
+          <repeatValuesq>false</repeatValuesq>
+          <NameTypeName0>FirstName</NameTypeName0>
+          <NameGenderName0>Female</NameGenderName0>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>q</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request 2" id="0217c09c-08ac-4531-b4d6-900923f6b87e">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="Spotify Web API" resourcePath="/search/" methodName="get-an-artist" xsi:type="con:RestRequestStep">
+      <con:restRequest name="REST Request 2" id="f60d9483-c4e9-463d-a513-f2781d832b61" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://api.spotify.com/v1</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://api.spotify.com/v1/artists/2up3OPMp9Tb4dAKM2erWXQ</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="91811992-f405-4bff-8de7-76089c564095" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="6723f398-00c7-41bf-9d58-6a16220846cb" name="Response SLA" disabled="true">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>anna topping spotify</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="market" value="ES"/>
+          <con:entry key="q" value="${Data Source#q}"/>
+          <con:entry key="limit" value="1"/>
+          <con:entry key="type" value="artist"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>q</con:entry>
+          <con:entry>type</con:entry>
+          <con:entry>market</con:entry>
+          <con:entry>limit</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasink" name="Data Sink" id="cccfeaa9-7bdd-4065-b6ad-810c14685339">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataSinkStep">
+      <con:dataSink type="Excel">
+        <con:configuration>
+          <file/>
+          <outfile>C:/Users/anna.topping/OneDrive - SmartBear Software, Inc/Desktop/data-sink.xlsx</outfile>
+          <worksheet>sheet4</worksheet>
+          <cell>A2</cell>
+          <evaluateFormulas>false</evaluateFormulas>
+          <append>false</append>
+        </con:configuration>
+      </con:dataSink>
+      <con:properties>
+        <con:property>
+          <con:name>track</con:name>
+          <con:value>${get top tracks#Response#$['tracks'][0]['name']}</con:value>
+        </con:property>
+        <con:property>
+          <con:name>album</con:name>
+          <con:value>${get top tracks#Response#$['tracks'][0]['album']['name']}</con:value>
+        </con:property>
+        <con:property>
+          <con:name>artist</con:name>
+          <con:value>${get top tracks#Response#$['tracks'][0]['artists'][0]['name']}</con:value>
+        </con:property>
+        <con:property>
+          <con:name>year</con:name>
+          <con:value>${get top tracks#Response#$['tracks'][0]['album']['release_date']}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="Data Source Loop" id="4d1342ad-607b-4bee-b871-2af13959279a">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>Data Source</dataSourceStep>
+      <targetStep>Data Sink</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="6faab8de-327e-404a-ad6a-92c2673cba40">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="d7b5f83c-9bb2-4dbe-b0f3-66f69604eefd">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

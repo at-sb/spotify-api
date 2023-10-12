@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/artists/{id}" path="/search/" id="f961c787-b56f-46f0-9310-45b05df2f8c5">
+  <con:settings id="d1fc1b71-0e0c-4929-8669-f986b388fd30">
+    <con:setting id="f961c787-b56f-46f0-9310-45b05df2f8c5fileName">%2Fartists%2F%7Bid%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="get-an-artist" id="b9193a28-f596-44d3-a3c9-0d5ece7563bc" method="GET">
+    <con:description>Get Spotify catalog information for a single artist identified by their unique Spotify ID.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>q</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>type</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>market</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>limit</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>incorrect!</con:description>
+      <con:sampleContent>{
+  "external_urls" : {
+    "spotify" : "string"
+  },
+  "followers" : {
+    "href" : "string",
+    "total" : 0
+  },
+  "genres" : [ "Prog rock", "Grunge" ],
+  "href" : "string",
+  "id" : "string",
+  "images" : [ {
+    "url" : "https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228\n",
+    "height" : 300,
+    "width" : 300
+  } ],
+  "name" : "string",
+  "popularity" : 0,
+  "type" : "artist",
+  "uri" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>403</con:status>
+      <con:params/>
+      <con:description>The app has exceeded its rate limits.</con:description>
+    </con:representation>
+    <con:request name="Request 1" id="f60d9483-c4e9-463d-a513-f2781d832b61" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.spotify.com/v1</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://api.spotify.com/v1/artists/2up3OPMp9Tb4dAKM2erWXQ</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>anna topping spotify</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="market" value=""/>
+        <con:entry key="q" value="7bu3H8JO7d0UbMoVzbo70s"/>
+        <con:entry key="limit" value=""/>
+        <con:entry key="type" value=""/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>q</con:entry>
+        <con:entry>type</con:entry>
+        <con:entry>market</con:entry>
+        <con:entry>limit</con:entry>
+      </con:parameterOrder>
+    </con:request>
+    <con:request name="get by name" id="f60d9483-c4e9-463d-a513-f2781d832b61" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.spotify.com/v1</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://api.spotify.com/v1/artists/2up3OPMp9Tb4dAKM2erWXQ</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>anna topping spotify</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="market" value="ES"/>
+        <con:entry key="q" value="tom"/>
+        <con:entry key="limit" value="1"/>
+        <con:entry key="type" value="artist"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>q</con:entry>
+        <con:entry>type</con:entry>
+        <con:entry>market</con:entry>
+        <con:entry>limit</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

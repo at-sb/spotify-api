@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="1977a688-2c75-4cba-ab57-83af8af0d516" name="Get Spotify Artist">
+  <con:settings id="036f4803-83dd-41a2-863f-5ae92eaf929b">
+    <con:setting id="1977a688-2c75-4cba-ab57-83af8af0d516fileName">Get-Spotify-Artist</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

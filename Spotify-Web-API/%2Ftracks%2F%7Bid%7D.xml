@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/tracks/{id}" path="/tracks/{id}" id="c5562268-c182-4110-8369-275bacb91c87">
+  <con:settings id="9b0391cf-cb9d-4a42-88ef-2baa539055b8">
+    <con:setting id="c5562268-c182-4110-8369-275bacb91c87fileName">%2Ftracks%2F%7Bid%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="get-track" id="fefe995e-c9a0-47f0-9e9e-12fc9546aa70" method="GET">
+    <con:description>Get Spotify catalog information for a single track identified by its
+unique Spotify ID.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>id</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success!</con:description>
+      <con:sampleContent>{
+  "album" : {
+    "album_type" : "compilation",
+    "total_tracks" : 9,
+    "available_markets" : [ "CA", "BR", "IT" ],
+    "external_urls" : {
+      "spotify" : "string"
+    },
+    "href" : "string",
+    "id" : "2up3OPMp9Tb4dAKM2erWXQ",
+    "images" : [ {
+      "url" : "https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228\n",
+      "height" : 300,
+      "width" : 300
+    } ],
+    "name" : "string",
+    "release_date" : "1981-12",
+    "release_date_precision" : "year",
+    "restrictions" : {
+      "reason" : "market"
+    },
+    "type" : "album",
+    "uri" : "spotify:album:2up3OPMp9Tb4dAKM2erWXQ",
+    "album_group" : "compilation",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "string"
+      },
+      "href" : "string",
+      "id" : "string",
+      "name" : "string",
+      "type" : "artist",
+      "uri" : "string"
+    } ]
+  },
+  "artists" : [ {
+    "external_urls" : {
+      "spotify" : "string"
+    },
+    "followers" : {
+      "href" : "string",
+      "total" : 0
+    },
+    "genres" : [ "Prog rock", "Grunge" ],
+    "href" : "string",
+    "id" : "string",
+    "images" : [ {
+      "url" : "https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228\n",
+      "height" : 300,
+      "width" : 300
+    } ],
+    "name" : "string",
+    "popularity" : 0,
+    "type" : "artist",
+    "uri" : "string"
+  } ],
+  "available_markets" : [ "string" ],
+  "disc_number" : 0,
+  "duration_ms" : 0,
+  "explicit" : true,
+  "external_ids" : {
+    "isrc" : "string",
+    "ean" : "string",
+    "upc" : "string"
+  },
+  "external_urls" : {
+    "spotify" : "string"
+  },
+  "href" : "string",
+  "id" : "string",
+  "is_playable" : true,
+  "linked_from" : {
+    "external_urls" : {
+      "spotify" : "string"
+    },
+    "href" : "string",
+    "id" : "string",
+    "type" : "string",
+    "uri" : "string"
+  },
+  "restrictions" : {
+    "reason" : "string"
+  },
+  "name" : "string",
+  "popularity" : 0,
+  "preview_url" : "string",
+  "track_number" : 0,
+  "type" : "string",
+  "uri" : "string",
+  "is_local" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>429</con:status>
+      <con:params/>
+      <con:description>Too many requests The app has exceeded its rate limits.</con:description>
+      <con:sampleContent>{
+  "error" : {
+    "status" : 0,
+    "message" : "string"
+  }
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>403</con:status>
+      <con:params/>
+      <con:description>The app has exceeded its rate limits.</con:description>
+      <con:sampleContent>{
+  "error" : {
+    "status" : 0,
+    "message" : "string"
+  }
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="1e7be599-64be-4703-850a-bd16f2723bac" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.spotify.com/v1</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://api.spotify.com/v1/tracks/263aNAQCeFSWipk896byo6</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="id" value="263aNAQCeFSWipk896byo6"/>
+      </con:parameters>
+    </con:request>
+  </con:method>
+</con:resource>

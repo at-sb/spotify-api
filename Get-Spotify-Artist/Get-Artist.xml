@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="3c070adf-e644-4726-b329-359561037d4b" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Get Artist" searchProperties="true" timeout="0">
+  <con:settings id="0d3c830c-55fe-484e-91d1-705601d81e54">
+    <con:setting id="3c070adf-e644-4726-b329-359561037d4bfileName">Get-Artist</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="REST Request" id="9f5a7251-5e65-4d66-bbca-84f3d5e3b660">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="Spotify Web API" resourcePath="/search/" methodName="get-an-artist" xsi:type="con:RestRequestStep">
+      <con:restRequest name="REST Request" id="f60d9483-c4e9-463d-a513-f2781d832b61" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://api.spotify.com/v1</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://api.spotify.com/v1/artists/2up3OPMp9Tb4dAKM2erWXQ</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="04c7f451-c060-42b8-a8a6-ca1a888a7302" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>anna topping spotify</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="market" value=""/>
+          <con:entry key="q" value="0LcJLqbBmaGUft1e9Mm8HV"/>
+          <con:entry key="limit" value=""/>
+          <con:entry key="type" value=""/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>q</con:entry>
+          <con:entry>type</con:entry>
+          <con:entry>market</con:entry>
+          <con:entry>limit</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

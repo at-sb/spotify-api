@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockService xmlns:con="http://eviware.com/soapui/config" id="708b4056-41f3-43db-8d24-9d9dd7310d73" port="8096" path="/" host="localhost" name="Spotify Web API Virtual Service">
+  <con:settings id="1d9310d8-33fc-46e3-a171-673fdb7f6f3c">
+    <con:setting id="708b4056-41f3-43db-8d24-9d9dd7310d73fileName">Spotify-Web-API-Virtual-Service</con:setting>
+  </con:settings>
+  <con:properties/>
+  <con:constraints>
+    <con:congestion>0</con:congestion>
+    <con:inputBandwidth>-1</con:inputBandwidth>
+    <con:outputBandwidth>-1</con:outputBandwidth>
+    <con:maxThreadPoolCapacity>20</con:maxThreadPoolCapacity>
+    <con:coreThreadPoolCapacity>5</con:coreThreadPoolCapacity>
+    <con:virtError>
+      <con:start>0</con:start>
+      <con:endless>true</con:endless>
+    </con:virtError>
+  </con:constraints>
+  <con:dataSources>
+    <con:dataSource>
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>1</generatorsTotalNumber>
+          <lastSelectedProperty>0</lastSelectedProperty>
+          <GeneratorType0>NAME</GeneratorType0>
+          <PropertyName0>name</PropertyName0>
+          <repetitionCountname>0</repetitionCountname>
+          <repeatValuesname>false</repeatValuesname>
+          <NameTypeName0>FirstName</NameTypeName0>
+          <NameGenderName0>Any</NameGenderName0>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:name>Data Source 1</con:name>
+      <con:property>name</con:property>
+    </con:dataSource>
+  </con:dataSources>
+  <con:headerValidator type="NONE"/>
+</con:restMockService>
